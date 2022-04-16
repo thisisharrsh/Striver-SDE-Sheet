@@ -3,9 +3,14 @@ class Solution:
         
         flag = False
         for i in matrix:
-            for j in i:
-                if j ==  target:
+            low  = 0 
+            high = len(i)-1 
+            while(low<=high):
+                mid = (low+high)//2
+                if i[mid] == target:
                     flag = True
-
-        return (flag)
-        
+                if i[mid] < target:
+                    low = mid+1 
+                else:
+                    high = mid-1 
+        return flag
