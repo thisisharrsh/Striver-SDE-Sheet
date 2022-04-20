@@ -1,18 +1,17 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         
-        if len(nums) == 0:
-            return 0 
-        nums.sort()
-        ans = 1 
-        prev = nums[0]
-        curr = 1 
-        for i in range(len(nums)):
-            if(nums[i] == prev+1):
-                curr = curr+1 
-            elif(nums[i]!=prev):
-                curr =1 
-            prev = nums[i]
-            ans = max(ans,curr)
-        return ans
+        hashmap=set()
+        for i in nums:
+            hashmap.add(i)
+        count = 0 
+        longest_count = 0 
+        for val in nums:
+            if(val-1 not in hashmap):
+                count = 0
+                while(val in hashmap):
+                    val = val+1 
+                    count = count+1 
+                longest_count = max(longest_count,count)
+        return(longest_count)
         
