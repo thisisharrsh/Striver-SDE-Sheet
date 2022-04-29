@@ -22,7 +22,7 @@ def merger(a,b):
             temp.bottom = b
             temp = temp.bottom
             b = b.bottom
-    if(a):
+    if(a!=None):
         temp.bottom = a
     else:
         temp.bottom = b
