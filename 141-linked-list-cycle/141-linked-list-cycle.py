@@ -7,15 +7,10 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         
-        hashset = set()
-        temp = head
-        while(temp):
-            if temp in hashset:
+        fast = slow = head 
+        while(fast and fast.next and slow):
+            fast = fast.next.next
+            slow = slow.next
+            if(fast == slow):
                 return True
-            else:
-                hashset.add(temp)
-                temp = temp.next
         return False
-            
-            
-        
