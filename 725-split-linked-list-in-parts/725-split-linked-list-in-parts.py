@@ -22,7 +22,7 @@ class Solution:
                 prev,curr = curr , curr.next
             if prev:
                 prev.next = None
-            extra-=1 
+                extra-=1 
                 
         return temp
         
