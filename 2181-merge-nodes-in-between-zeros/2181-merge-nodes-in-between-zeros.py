@@ -5,7 +5,6 @@
 #         self.next = next
 class Solution:
     def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        
         curr=head
         node=head.next
         curr_sum=0
@@ -23,4 +22,3 @@ class Solution:
             
         prev.next=None
         return head.next
-        
